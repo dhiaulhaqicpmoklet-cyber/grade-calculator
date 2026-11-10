@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ukk 04 11 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        img{
+            width: 150px;
+        }
+        body {
+            font-family: sans-serif;
+            display: grid;
+            grid-template-columns: 1fr auto 0.75fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "a b d"
+                "a b d"
+                "a c d";
+            gap: 20px;
+            color: #00fff5;
+            background-color: #111111;
+            margin: 20px;
+        }
+        body.light-mode{
+            background-color: #f7f4e9;
+            color: #ffbb0c;
+        }
+        section {
+            background-color: #0b7373;
+            border-radius: 20px;
+            padding: 20px;
+            min-width: 0;
+        }
+        .r{
+            width: 100pt;
+        }
+        body.light-mode section{
+            background-color: #2f4371;
+        }
+        #description {
+            grid-area: a;
+        }
+        #input {
+            grid-area: b;
+        }
+        #output {
+            grid-area: c;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "aa aa"
+                "bb cc"
+                "dd ee"
+                "ff gg"
+                "hh hh";
+            gap: 10px;
+        }
+        #something {
+            grid-area: d;
+        }
+        #input input {
+            width: 100%;
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        #input h3, #input h2 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        button{
+            background-color: #0b7373;
+            color: #00fff5;
+            border: none;
+        }
+        body.light-mode button{
+            background-color: #2f4371;
+            color: #ffbb0c;
+        }
+        #submit {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #B61e2d;
+            color: #ced4ca;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #submit:hover {
+            background-color: #16476a;
+        }
+        .ad{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #0b7373;
+        }
+        body.light-mode .ad{
+            background-color: #2f4371;
+        }
+        .aa{
+            grid-area: aa;
+        }
+        .bb{
+            grid-area: bb;
+        }
+        .cc{
+            grid-area: cc;
+        }
+        .dd{
+            grid-area: dd;
+        }
+        .ee{
+            grid-area: ee;
+        }
+        .ff{
+            grid-area: ff;
+        }
+        .gg{
+            grid-area: gg;
+        }
+        .hh{
+            grid-area: hh;
+        }
+        div{
+            display: flex;
+            background-color: #3a3a3a;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        @media (max-width: 1024px) {
+            body {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "a b"
+                    "c d";
+            }
+        }
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "a"
+                    "b"
+                    "c"
+                    "d";
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="description">
+        <button id="display"><img src="telkom.png" alt="" class="r"></button>
+        <h2>Student Grade Calculator</h2>
+        <p>This is a dynamic web application capable of calculating a student's average grade, I hope this can be useful.</p>
+        <h3>Fitur</h3>
+        <ul>
+            <li>Description section</li>
+            <li>instructions for use section</li>
+            <li>input section</li>
+            <li>output section</li>
+            <li>Calculating the grade using the following formula:</li>
+            <p>NA = (T *0,30)+(UTS *0,30)+(UAS *0,35)+(K *0,05)</p>
+            <h3>variable description:</h3>
+            <ul>
+                <li>NA = Final Grade</li>
+                <li>T = Assignment Grade</li>
+                <li>UTS = Midterm Exam Grade</li>
+                <li>UAS = Final Exam Grade</li>
+                <li>K = Attendance Grade</li>
+                <ul>
+                    <li>K = ((P-A)/P)*100</li>
+                    <li>P = Total number of meetings</li>
+                    <li>A = Number of absences</li>
+                </ul>
+            </ul>
+            <li>Something Section</li>
+        </ul>
+        <h3>instructions of use</h3>
+        <ol>
+            <li>Enter Student Name</li>
+            <li>Enter Student Class</li>
+            <li>Enter Student Attendance Number</li>
+            <li>Enter Student Attendance(total attendance for one semester divided by 3)</li>
+            <li>Enter Student Assignment Score</li>
+            <li>Enter Student Midterm Score</li>
+            <li>Enter Student Final Score</li>
+            <li>press the submit button</li>
+            <li>the results will be shown in the output section</li>
+        </ol>
+    </section>
+    <section id="input">
+        <form action="" method="post">
+            <h2>Student Name</h2>
+            <input type="text" id="name" placeholder="Put the Student Name here">
+            <h3>Student Class</h3>
+            <input type="text" id="studentClass" placeholder="Put the Student's Class here">
+            <h3>Student Attendance Number</h3>
+            <input type="number" id="studentAttendanceN" placeholder="Put the Student's Attendance Number here">
+            <h3>Student Attendance</h3>
+            <input type="number" id="studentAttendanceS" placeholder="Put the Student's Attendance Number here">
+            <h3>Student Assignment Score</h3>
+            <input type="number" id="assignment" placeholder="Put the Student's Assignment Score here">
+            <h3>Student Midterm Score</h3>
+            <input type="number" id="midterm" placeholder="Put the Student's Midterm Score Class here">
+            <h3>Student Final Score</h3>
+            <input type="number" id="final" placeholder="Put the Student's Final Score here">
+            <button type="submit" id="submit">SUBMIT</button>
+        </form>
+    </section>
+    <section id="output">
+        <div class="aa">
+            <h3>Student Name: </h3>
+            <h2 id="studentn"></h2>
+        </div>
+        <div class="bb">
+            <h4>Student Class: </h4>
+            <h3 id="studentc"></h3>
+        </div>
+        <div class="cc">
+            <h4>Student Attendance Number: </h4>
+            <h3 id="studentat"></h3>
+        </div>
+        <div class="dd">
+            <h4>Student Attendance Score: </h4>
+            <h3 id="studentatn"></h3>
+        </div>
+        <div class="ee">
+            <h4>Student Assignment Score: </h4>
+            <h3 id="studenta"></h3>
+        </div>
+        <div class="ff">
+            <h4>Student Midterm Score: </h4>
+            <h3 id="studentm"></h3>
+        </div>
+        <div class="gg">
+            <h4>Student Final Score: </h4>
+            <h3 id="studentf"></h3>
+        </div>
+        <div class="hh">
+            <h4>Student Final Grade: </h4>
+            <h3 id="studentanswere"></h3>
+        </div>
+    </section>
+    <section id="something">
+        <h1>something</h1>
+        <div class="ad">
+            <img src="geco.png" alt="">
+            <img src="lizard.jpg" alt="">
+            <img src="c97f101303a9f2a4c5ca4bf48bcc95f1 (1).jpg" alt="">
+            <img src="lizard0.jpg" alt="">
+            <img src="lizard1.jpg" alt="">
+            <img src="WhatsApp Image 2026-11-11 at 3.43.15 AM.jpeg" alt="">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
